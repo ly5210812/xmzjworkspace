@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #\u6D4B\u8BD5\u65F6\u5173\u95ED\u81EA\u6211\u4FDD\u62A4\u673A\u5236  \uFF0C\u4FDD\u8BC1\u4E0D\u53EF\u7528\u7684\u670D\u52A1\u81EA\u5DF1\u8E22\u51FA
+    enable-self-preservation: false #\u5173\u95ED\u81EA\u6211\u4FDD\u62A4\u673A\u5236
+    #\u95F4\u9694\u4E24\u79D2\u5254\u9664
+    eviction-interval-timer-in-ms: 2000
+spring:
+  application:
+    name: eurka-server
